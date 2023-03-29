@@ -1,0 +1,28 @@
+{% load i18n %}
+
+{% block subject %}
+{% blocktrans %}Активация аккаунта на rscanner.ru{% endblocktrans %}
+{% endblock subject %}
+
+{% block text_body %}
+{% blocktrans %}Вы получили это письмо, потому что Вам нужно завершить процесс активации учетной записи на rscanner.ru{% endblocktrans %}
+
+{% trans "Пожалуйста, перейдите на следующую страницу, чтобы активировать учетную запись:" %}
+{{ protocol }}://localhost:3000/{{ url|safe }}
+
+{% trans "Спасибо за использование нашего сайта!" %}
+
+{% blocktrans %}Команда rscanner.ru{% endblocktrans %}
+{% endblock text_body %}
+
+{% block html_body %}
+<p>{% blocktrans %}Вы получили это письмо, потому что Вам нужно завершить процесс активации учетной записи на rscanner.ru{% endblocktrans %}</p>
+
+<p>{% trans "Пожалуйста, перейдите на следующую страницу, чтобы активировать учетную запись:" %}</p>
+<p><a href="{{ protocol }}://localhost:3000/{{ url|safe }}">{{ protocol }}://localhost:3000/{{ url|safe }}</a></p>
+
+<p>{% trans "Спасибо за использование нашего сайта!" %}</p>
+
+<p>{% blocktrans %}Команда rscanner.ru{% endblocktrans %}</p>
+
+{% endblock html_body %}
